@@ -14,6 +14,7 @@ COPY tsconfig.json tsconfig.json
 COPY tsconfig.app.json tsconfig.app.json
 COPY tsconfig.node.json tsconfig.node.json
 COPY vite.config.ts vite.config.ts
+COPY components.json components.json
 COPY index.html index.html
 COPY public public
 COPY src src

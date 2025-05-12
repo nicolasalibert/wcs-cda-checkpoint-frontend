@@ -1,8 +1,9 @@
-import "./App.css";
+import "./styles.css";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { HomePage } from "./pages/Home";
-import { PageLayout } from "./components/Layout";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { PageLayout } from "./components/Layout";
+import { CountryList } from "./pages/CountryList";
+import { CountryPage } from "./pages/CountryPage";
 
 const client = new ApolloClient({
   uri: "/api",
@@ -16,7 +17,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route Component={PageLayout}>
-            <Route path="/" Component={HomePage} />
+            <Route path="/" Component={CountryList} />
+            <Route path="/country/:code" Component={CountryPage} />
             <Route path="*" Component={() => <Navigate to="/" />} />
           </Route>
         </Routes>
